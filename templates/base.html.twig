@@ -12,6 +12,16 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        
+        {% block body %}
+            {% block header %}
+
+            {% endblock %}
+            
+            {% block footer %}
+
+            {% endblock %}
+        {% endblock %}
+        
     </body>
 </html>

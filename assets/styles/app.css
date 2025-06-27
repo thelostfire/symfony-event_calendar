@@ -1,3 +1,50 @@
-body {
-    background-color: skyblue;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Important-category {
+    padding: 2px;
+    background-color: red;
+    border-radius: 3px;
+}
+.Work-category {
+    padding: 2px;
+    background-color: yellow;
+    border-radius: 3px;
+}
+.Social-category {
+    padding: 2px;
+    background-color: rgb(59, 245, 59);
+    border-radius: 3px;
+}
+.Home-category {
+    padding: 2px;
+    background-color: brown;
+    border-radius: 3px;
+}
+.Sport-category {
+    padding: 2px;
+    background-color: rgb(36, 186, 236);
+    border-radius: 3px;
+}
+.day-wrapper {
+    border: 2px solid blue;
+    border-radius: 5px;
+    margin: 1rem;
+    
+}
+.event-wrapper {
+    border: 3px solid lightblue;
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 5px;
+}
+
+li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

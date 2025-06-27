@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="ml-10 mr-10">
+    
+
+    
+    <ul class="flex flex-wrap justify-around">
+        {% for date in dates %}
+            <div class="day-wrapper truncate w-48 h-36 p-2">
+                <li><a href="{{ path('app_dailies', {'id': date.getId() }) }}"><h2 class="text-2xl font-extrabold">{{ date.date|date('Y-m-d') }}</h2></a></li>
+                <div>
+                    {% for event in date.getEvents() %}
+                        <li><p><span class={{ event.getCategory().getName() }}-category >{{ event.getCategory().getName() }}</span> {{ event.getTitle() }}</p></li>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

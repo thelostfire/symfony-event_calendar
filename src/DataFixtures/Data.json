@@ -1,0 +1,19 @@
+{
+    "category":[
+        {
+            "name": "Important"
+        },
+        {
+            "name": "Work"
+        },
+        {
+            "name": "Social"
+        },
+        {
+            "name": "Home"
+        },
+        {
+            "name": "Sport"
+        }
+    ]
+}
