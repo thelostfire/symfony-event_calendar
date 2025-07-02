@@ -47,6 +47,11 @@ class Date
         return $this;
     }
 
+    public function getDateString(): ?string 
+    {
+        return $this->getDate()->format('Y-m-d');
+    }
+
     /**
      * @return Collection<int, Event>
      */

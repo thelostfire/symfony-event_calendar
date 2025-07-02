@@ -15,7 +15,7 @@ class AppFixtures extends Fixture
     {
         $faker = \Faker\Factory::create();
 
-        $data = json_decode(file_get_contents(__DIR__.'/Data.json'), true);
+        $data = json_decode(file_get_contents(__DIR__.'/categories.json'), true);
         $categories = [];
         foreach($data['category'] as $categ) {
             $category = new Category();

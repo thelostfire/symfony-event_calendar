@@ -1,25 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Domicile{% endblock %}
 
 {% block body %}
-
-{{ parent() }}
-
+    {{ parent() }}
 {% endblock %}
 
 {% block main %}
 
-<div class="ml-10 mr-10">
-    <h2 class="text-2xl font-extrabold m-[1rem]">Évènements du {{ day.date|date('d/m/Y') }}</h2>
-    {% for event in day.getEvents() %}
-    <div class="event-wrapper">
+<h2 class="text-2xl font-extrabold m-[1rem]">Évènements au domicile</h2>
+    
+    <ul>
+        {% for event in events_home %}
+        <div class="event-wrapper">
         <h3><span class={{ event.getCategory().getName() }}-category >{{ event.getCategory().getName() }}</span> {{ event.getTitle }}</h3>
         <p>Horaire : {{ event.getTime()|date('H:i') }}</p>
         <p>{{ event.getdescription() }}</p>
     </div>
     {% endfor %}
-</div>
-
+    </ul>
 
 {% endblock %}
+
