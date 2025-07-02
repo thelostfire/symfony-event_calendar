@@ -23,6 +23,8 @@ final class FormController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $em->persist($eventForm);
             $em->flush();
+            $this->addFlash('success', 'Évènement bien enregistré.');
+            return $this->redirectToRoute('app_index');
         }
 
         return $this->render('form/event.html.twig', [

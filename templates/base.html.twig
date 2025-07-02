@@ -23,6 +23,15 @@
         </header>
 
             <main class="min-h-[75vh]">
+
+            {# FLASH MESSAGES #}
+                {% for type, messages in app.flashes(['success', 'info', 'warning', 'danger']) %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}" role="alert">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+                {% endfor %}
             {% block main %}
 
             

@@ -1,8 +1,10 @@
 twig:
     file_name_pattern: '*.twig'
+    form_themes:
+            - "@TalesFromADevFlowbite/form/default.html.twig"
+    globals: 
+        eventRepo: '@App\Services\FindAllCategoryRepo'
 
 when@test:
     twig:
         strict_variables: true
-    form_themes:
-    - "@TalesFromADevFlowbite/form/default.html.twig"

@@ -27,7 +27,7 @@ final class CategoryController extends AbstractController
     public function work(EventRepository $eventRepo): Response
     {
         $events = $eventRepo->findAll();
-        $eventsImportant = [];
+        $eventsWork = [];
         foreach($events as $event) {
             if($event->getCategory()->getName() === 'Work') {
                 $eventsWork[] = $event;
