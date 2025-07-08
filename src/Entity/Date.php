@@ -81,4 +81,8 @@ class Date
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->date->format('d/m/Y');
+    }
 }

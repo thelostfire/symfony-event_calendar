@@ -30,6 +30,9 @@ class Event
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $eventPicFilename = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +94,18 @@ class Event
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEventPicFilename(): ?string
+    {
+        return $this->eventPicFilename;
+    }
+
+    public function setEventPicFilename(?string $eventPicFilename): static
+    {
+        $this->eventPicFilename = $eventPicFilename;
 
         return $this;
     }

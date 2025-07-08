@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <div class="mx-auto max-w-[900px]">
+        <h3><span class={{ event.getCategory().getName() }}-category >{{ event.getCategory().getName() }}</span> {{ event.getTitle }}</h3>
+
+        {% if event.eventPicFilename is not null %}
+        <p>
+            <img src="{{ '/uploads/event/' ~ event.eventPicFilename }}" alt="{{ event.title }}" class="rounded-full max-h-[150px]">
+        </p>
+        {% endif %}
+    <div>{{ form(form) }}</div>
+    </div>
+{% endblock %}
