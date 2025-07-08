@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
+use App\Entity\Date;
 use App\Entity\Event;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -50,5 +52,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Events', 'fas fa-list', Event::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Date', 'fas fa-list', Date::class);
     }
 }

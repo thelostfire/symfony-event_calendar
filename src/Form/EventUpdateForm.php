@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Category;
 use App\Entity\Date;
 use App\Entity\Event;
+use App\Entity\Tag;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -36,6 +37,11 @@ class EventUpdateForm extends AbstractType
             ->add('date', EntityType::class, [
                 'class' => Date::class,
                 'choice_label' => 'id',
+            ])
+            ->add('tags', EntityType::class, [
+                'class' => Tag::class,
+                'choice_label' =>'name',
+                'multiple' => true
             ])
             ->add('Enregistrer', SubmitType::class)
         ;

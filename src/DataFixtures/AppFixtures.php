@@ -2,10 +2,10 @@
 
 namespace App\DataFixtures;
 
-require_once __DIR__.'/Data.json';
 use App\Entity\Category;
 use App\Entity\Date;
 use App\Entity\Event;
+use App\Entity\Tag;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -40,6 +40,11 @@ class AppFixtures extends Fixture
                 ->setCategory($faker->randomElement($categories))
                 ->setDate($faker->randomElement($dates));
                 $manager->persist($event);
+        }
+        for($i=0; $i<8; $i++) {
+            $tag = new Tag();
+            $tag->setName($faker->hexColor);
+            $manager->persist($tag);
         }
 
         // $product = new Product();
